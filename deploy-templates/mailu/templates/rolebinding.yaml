@@ -1,0 +1,13 @@
+apiVersion: authorization.openshift.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ .Release.Name }}-admin
+roleRef:
+  name: admin
+subjects:
+  - kind: ServiceAccount
+    name: {{ .Release.Name }}
+    namespace: {{ .Release.Namespace }}
+userNames:
+  - system:serviceaccount:{{ .Release.Namespace }}:{{ .Release.Name }}
+groupNames: []

@@ -1,0 +1,31 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: mailu-admin
+spec:
+  host: mail.{{ .Values.dnsWildcard }}
+  path: /admin
+  to:
+    kind: Service
+    name: mailu-front
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: mailu-web
+spec:
+  host: mail.{{ .Values.dnsWildcard }}
+  to:
+    kind: Service
+    name: mailu-front
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
