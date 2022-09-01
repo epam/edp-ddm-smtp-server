@@ -1,0 +1,5 @@
+persistence:
+  single_pvc: true
+  size: 8Gi
+  accessMode: ReadWriteMany
+  storageClass: "ocs-storagecluster-cephfs"

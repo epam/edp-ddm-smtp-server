@@ -1,0 +1,23 @@
+After all services are running, your mail system is reachable under
+
+        https://mail.{{ .Values.dnsWildcard }}
+
+{{- if .Values.initialAccount }}
+
+You can login to the admin panel using the following initial credentials (if not changed yet):
+
+        https://mail.{{ .Values.dnsWildcard }}/admin
+
+        Username: {{ .Values.initialAccount.username }}@{{ .Values.dnsWildcard }}
+        Password: <please find it in `mailu-admin-credentials` secret>
+
+{{- else }}
+
+After you created an initial admin login (see docs), you can login to the admin panel at 
+
+        https://mail.{{ .Values.dnsWildcard }}/admin
+
+{{- end }}
+
+!!! Please make sure you read and understand the warning about open relays in the README.md !!!
+
