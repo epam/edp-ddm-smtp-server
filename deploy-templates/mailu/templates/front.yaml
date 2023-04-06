@@ -45,7 +45,7 @@ spec:
       {{- end }}
       containers:
       - name: front
-        image: {{ .Values.front.image.repository }}:{{ default .Values.mailuVersion .Values.front.image.tag }}
+        image: {{ template "imageRegistry" . -}} {{ .Values.front.image.repository }}:{{ default .Values.mailuVersion .Values.front.image.tag }}
         imagePullPolicy: Always
         # volumeMounts:
           # - name: certs

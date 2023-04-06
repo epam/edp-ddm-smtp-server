@@ -34,7 +34,7 @@ spec:
       {{- end }}
       containers:
       - name: postfix
-        image: {{ .Values.postfix.image.repository }}:{{ default .Values.mailuVersion .Values.postfix.image.tag }}
+        image: {{ template "imageRegistry" . -}} {{ .Values.postfix.image.repository }}:{{ default .Values.mailuVersion .Values.postfix.image.tag }}
         imagePullPolicy: Always
         {{- with .Values.postfix.containerSecurityContext }}
         securityContext:

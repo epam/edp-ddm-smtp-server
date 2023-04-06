@@ -1,2 +1,4 @@
 dnsWildcard: {{ requiredEnv "dnsWildcard" }}
 
+global:
+  imageRegistry: '{{ env "dockerProxyRegistry" }}'
