@@ -96,3 +96,12 @@ Session encryption key for admin and webmail
 {{- uuidv4 | b64enc }}
 {{- end }}
 {{- end }}
+
+{{- define "imageRegistry" -}}
+{{- if .Values.global -}}
+{{- if .Values.global.imageRegistry -}}
+{{- printf "%s/" .Values.global.imageRegistry -}}
+{{- else -}}
+{{- end -}}
+{{- end -}}
+{{- end }}

@@ -3,3 +3,43 @@ persistence:
   size: 8Gi
   accessMode: ReadWriteMany
   storageClass: "ocs-storagecluster-cephfs"
+
+admin:
+  image:
+    repository: mailu/admin
+    tag: 1.8
+
+clamav:
+  image:
+    repository: mailu/clamav
+    tag: 1.8
+
+dovecot:
+  image:
+    repository: mailu/dovecot
+    tag: 1.8
+
+front:
+  image:
+    repository: mailu/nginx
+    tag: 1.8
+
+postfix:
+  image:
+    repository: mailu/postfix
+    tag: 1.8
+
+redis:
+  image:
+    repository: mailu/redis
+    tag: 1.8
+
+roundcube:
+  image:
+    repository: mailu/roundcube
+    tag: 1.8
+
+rspamd:
+  image:
+    repository: mailu/rspamd
+    tag: 1.8

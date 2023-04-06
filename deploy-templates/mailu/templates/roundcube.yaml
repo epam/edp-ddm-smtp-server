@@ -38,7 +38,7 @@ spec:
       {{- end }}
       containers:
       - name: roundcube
-        image: {{ .Values.roundcube.image.repository }}:{{ default .Values.mailuVersion .Values.roundcube.image.tag }}
+        image: {{ template "imageRegistry" . -}} {{ .Values.roundcube.image.repository }}:{{ default .Values.mailuVersion .Values.roundcube.image.tag }}
         imagePullPolicy: Always
         volumeMounts:
           - mountPath: /data
